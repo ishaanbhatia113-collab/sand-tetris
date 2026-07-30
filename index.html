@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sand Tetris</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="game">
+  <div class="stage">
+    <canvas id="board"></canvas>
+    <div id="overlay" class="overlay hidden">
+      <h2 id="overlayTitle">Game Over</h2>
+      <p id="overlayText">Score 0</p>
+      <button id="restart" type="button">Play again</button>
+      <span class="hint">or press R</span>
+    </div>
+  </div>
+
+  <aside class="panel">
+    <h1>Sand<span>Tetris</span></h1>
+
+    <div class="stat"><label>Score</label><output id="score">0</output></div>
+    <div class="row">
+      <div class="stat small"><label>Level</label><output id="level">1</output></div>
+      <div class="stat small"><label>Rows</label><output id="lines">0</output></div>
+    </div>
+
+    <div class="stat next">
+      <label>Next</label>
+      <canvas id="preview" width="120" height="120"></canvas>
+    </div>
+
+    <ul class="keys">
+      <li><kbd>&larr;</kbd><kbd>&rarr;</kbd><span>Move</span></li>
+      <li><kbd>&uarr;</kbd><kbd>Z</kbd><span>Rotate</span></li>
+      <li><kbd>&darr;</kbd><span>Soft drop</span></li>
+      <li><kbd>Space</kbd><span>Hard drop</span></li>
+      <li><kbd>P</kbd><span>Pause</span></li>
+      <li><kbd>R</kbd><span>Restart</span></li>
+    </ul>
+    <p class="note">WASD works too. Pieces shatter into sand when they land &mdash; fill a whole row of grains to clear it.</p>
+  </aside>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
