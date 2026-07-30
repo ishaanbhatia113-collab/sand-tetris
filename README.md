@@ -5,7 +5,9 @@ grains: you steer them like normal Tetris, but the moment one lands it shatters
 into sand that slumps, spreads and piles up. A row clears when every grain
 position across its width is packed.
 
-Open `index.html` in a browser. No build step, no dependencies.
+Everything lives in `index.html` — markup, styles and script inlined in that one
+file. Open it in a browser straight off disk. No build step, no dependencies, no
+server, no network requests.
 
 ## Controls
 
