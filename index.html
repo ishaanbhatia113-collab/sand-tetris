@@ -45,7 +45,7 @@ body {
 
 #board {
   display: block;
-  height: min(88vh, 720px);
+  height: min(90vh, 780px);
   width: auto;
   background: #0b0e16;
   border: 1px solid var(--line);
@@ -238,10 +238,10 @@ kbd {
   'use strict';
 
   // ---------------------------------------------------------------- constants
-  const GRID_W = 48;          // play field width, in sand particles (8 blocks)
-  const GRID_H = 108;         // play field height, in sand particles (18 blocks)
-  const CELL = 6;             // particles per tetromino block (6x6 grains)
-  const PX = 6;               // screen pixels per particle
+  const GRID_W = 70;          // play field width, in sand particles (10 blocks)
+  const GRID_H = 140;         // play field height, in sand particles (20 blocks)
+  const CELL = 7;             // particles per tetromino block (7x7 grains)
+  const PX = 5;               // screen pixels per particle
   const MOVE_STEP = 3;        // horizontal nudge, in particles
   const DAS = 0.15;           // delay before auto-repeat, seconds
   const ARR = 0.03;           // auto-repeat interval, seconds

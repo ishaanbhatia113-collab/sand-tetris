@@ -24,9 +24,10 @@ server, no network requests.
 
 ## How it works
 
-The field is a 48 × 108 grid of grains (`Uint8Array` of colour ids plus a
-parallel array of brightness variants). One tetromino block is a 6 × 6 cluster
-of grains, so the field is 8 blocks wide and 18 tall.
+The field is a 70 × 140 grid of grains (`Uint8Array` of colour ids plus a
+parallel array of brightness variants). One tetromino block is a 7 × 7 cluster
+of grains, so the field is 10 blocks wide and 20 tall — standard Tetris
+proportions, 9800 grains.
 
 Seven shapes share five colours. That is a deliberate difficulty dial rather
 than a shortcut: with a distinct colour per shape, one piece's grains only
@@ -61,5 +62,12 @@ and the ghost piece's landing row is cached against the same counter.
 
 The simulation runs on a fixed 1/120 s timestep decoupled from the render loop,
 capped at 4 catch-up steps per frame. Measured in Chromium over 180-frame
-windows: 16.7 ms median, 17.2 ms worst frame mid-game, zero dropped frames. The
-panel shows a live FPS readout.
+windows on the 9800-grain field: 16.7 ms median, and at most one frame in 180
+over budget. The panel shows a live FPS readout.
+
+Widening the field makes bridges harder, because a piece's grains spread a
+roughly fixed distance regardless of how wide the field is. Measured over four
+40-drop sessions of random play at 70 × 140: five colours gives 5.7 clears per
+40 drops, four colours gives 6.8. Five was kept for the extra colour variety;
+dropping `Z` and `J` onto existing hues in `PIECES` is the one-line change if a
+more forgiving game is wanted.
